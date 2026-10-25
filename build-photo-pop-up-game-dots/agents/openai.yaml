@@ -1,0 +1,8 @@
+interface:
+  display_name: "Photo Pop-Up Game · Dots"
+  short_description: "Build photo pop-up games with a Dots workflow"
+  default_prompt: "Use $build-photo-pop-up-game-dots to make a playable photo pop-up game. Collect the essential brief once and handle the build through delivery."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  allow_implicit_invocation: true

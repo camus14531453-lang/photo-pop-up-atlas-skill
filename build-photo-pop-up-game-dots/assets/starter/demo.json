@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "title": "Paper Shapes",
+  "intro": "Open a tiny paper book. Raise the shapes in order from fewest to most sides.",
+  "language": "en",
+  "game": {
+    "mode": "sequence",
+    "targets": ["triangle", "square", "pentagon"],
+    "retryText": "That order does not fit. Try again from the shape with the fewest sides.",
+    "winText": "All three shapes are standing in the right order. You solved the paper puzzle!"
+  },
+  "pieces": [
+    {"id":"square", "label":"Square, four sides", "shape":"square", "color":"#e9b35b", "page":"left", "x":-1.2, "z":0.5, "height":0.95},
+    {"id":"triangle", "label":"Triangle, three sides", "shape":"triangle", "color":"#93baba", "page":"right", "x":0.65, "z":0.5, "height":0.95},
+    {"id":"pentagon", "label":"Pentagon, five sides", "shape":"pentagon", "color":"#c891ad", "page":"right", "x":1.7, "z":0.5, "height":0.95}
+  ]
+}

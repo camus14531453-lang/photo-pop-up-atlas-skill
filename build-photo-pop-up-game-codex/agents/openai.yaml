@@ -1,0 +1,8 @@
+interface:
+  display_name: "Photo Pop-Up Game · Codex"
+  short_description: "Build photo pop-up games with a Codex workflow"
+  default_prompt: "Use $build-photo-pop-up-game-codex to make a playable photo pop-up game. Ask about my outcome and budget, then ask whether to enable Goal mode."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  allow_implicit_invocation: true

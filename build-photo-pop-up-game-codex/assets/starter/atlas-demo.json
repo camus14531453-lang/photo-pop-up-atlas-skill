@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "title": "纸上探索地图册",
+  "intro": "三个虚构区域，寻找地点并完成各页任务。",
+  "language": "zh-CN",
+  "spreads": [
+    {
+      "id": "region-0",
+      "title": "河湾 · 寻找信标",
+      "intro": "找到本页两个地点。",
+      "maps": {
+        "left": "media/map-0.png",
+        "right": "media/map-0.png"
+      },
+      "mapCaption": "虚构示意地图：河道穿过网格；两个地点分别位于左右页。无需声音也能完成任务。",
+      "pieces": [
+        {
+          "id": "place-0",
+          "label": "河畔信标",
+          "page": "left",
+          "x": -1.15,
+          "z": 0.2,
+          "height": 1,
+          "shape": "triangle",
+          "color": "#b26f4b",
+          "caption": "河畔信标：找到这个标记完成一项观察。 合成测试音，无真实人声。",
+          "image": "media/beacon.png",
+          "audio": "media/tone.wav"
+        },
+        {
+          "id": "place-1",
+          "label": "渡口标记",
+          "page": "right",
+          "x": 1.15,
+          "z": 0.2,
+          "height": 1,
+          "shape": "triangle",
+          "color": "#b26f4b",
+          "caption": "渡口标记：找到这个标记完成一项观察。"
+        }
+      ],
+      "game": {
+        "mode": "collect",
+        "targets": [
+          "place-0",
+          "place-1"
+        ],
+        "retryText": "请从谷口重新开始。",
+        "winText": "本跨页任务完成，可以继续探索。"
+      }
+    },
+    {
+      "id": "region-1",
+      "title": "山谷 · 路线顺序",
+      "intro": "按谷口、山顶的顺序探索。",
+      "maps": {
+        "left": "media/map-1.png",
+        "right": "media/map-1.png"
+      },
+      "mapCaption": "虚构示意地图：河道穿过网格；两个地点分别位于左右页。无需声音也能完成任务。",
+      "pieces": [
+        {
+          "id": "place-0",
+          "label": "谷口",
+          "page": "left",
+          "x": -1.15,
+          "z": 0.2,
+          "height": 1,
+          "shape": "triangle",
+          "color": "#b26f4b",
+          "caption": "谷口：先到谷口，再到山顶。 合成测试音，无真实人声。",
+          "image": "media/beacon.png",
+          "audio": "media/tone.wav"
+        },
+        {
+          "id": "place-1",
+          "label": "山顶",
+          "page": "right",
+          "x": 1.15,
+          "z": 0.2,
+          "height": 1,
+          "shape": "triangle",
+          "color": "#b26f4b",
+          "caption": "山顶：先到谷口，再到山顶。"
+        }
+      ],
+      "game": {
+        "mode": "sequence",
+        "targets": [
+          "place-0",
+          "place-1"
+        ],
+        "retryText": "请从谷口重新开始。",
+        "winText": "本跨页任务完成，可以继续探索。"
+      }
+    },
+    {
+      "id": "region-2",
+      "title": "海岸 · 收集观察",
+      "intro": "找到本页两个地点。",
+      "maps": {
+        "left": "media/map-2.png",
+        "right": "media/map-2.png"
+      },
+      "mapCaption": "虚构示意地图：河道穿过网格；两个地点分别位于左右页。无需声音也能完成任务。",
+      "pieces": [
+        {
+          "id": "place-0",
+          "label": "灯塔",
+          "page": "left",
+          "x": -1.15,
+          "z": 0.2,
+          "height": 1,
+          "shape": "triangle",
+          "color": "#b26f4b",
+          "caption": "灯塔：找到这个标记完成一项观察。 合成测试音，无真实人声。",
+          "image": "media/beacon.png",
+          "audio": "media/tone.wav"
+        },
+        {
+          "id": "place-1",
+          "label": "观测站",
+          "page": "right",
+          "x": 1.15,
+          "z": 0.2,
+          "height": 1,
+          "shape": "triangle",
+          "color": "#b26f4b",
+          "caption": "观测站：找到这个标记完成一项观察。"
+        }
+      ],
+      "game": {
+        "mode": "collect",
+        "targets": [
+          "place-0",
+          "place-1"
+        ],
+        "retryText": "请从谷口重新开始。",
+        "winText": "本跨页任务完成，可以继续探索。"
+      }
+    }
+  ]
+}

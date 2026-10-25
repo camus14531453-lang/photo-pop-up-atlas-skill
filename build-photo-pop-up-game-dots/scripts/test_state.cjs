@@ -1,0 +1,21 @@
+'use strict';
+const assert = require('node:assert/strict');
+const State = require('../assets/starter/game-state.js');
+const game = {mode:'sequence',targets:['a','b','c'],retryText:'Again',winText:'Win'};
+let s = State.initial();
+assert.equal(State.step(s,{type:'pick',id:'a'},game),s);
+s=State.step(s,{type:'start'},game);
+assert.equal(State.step(s,{type:'pick',id:'unknown'},game),s);
+s=State.step(s,{type:'pick',id:'b'},game);assert.deepEqual(s.picked,[]);assert.equal(s.message,'Again');
+s=State.step(s,{type:'pick',id:'a'},game);assert.deepEqual(s.picked,['a']);
+assert.equal(State.step(s,{type:'pick',id:'a'},game),s);
+s=State.step(s,{type:'pick',id:'c'},game);assert.deepEqual(s.picked,[]);
+for(const id of game.targets)s=State.step(s,{type:'pick',id},game);
+assert.equal(s.complete,true);assert.equal(s.message,'Win');
+assert.equal(State.step(s,{type:'pick',id:'a'},game),s);
+s=State.step(s,{type:'reset'},game);assert.equal(s.started,true);assert.equal(s.complete,false);assert.deepEqual(s.picked,[]);
+const collect={...game,mode:'collect'};
+for(const id of ['c','a','b'])s=State.step(s,{type:'pick',id},collect);
+assert.equal(s.complete,true);
+for(let run=0;run<20;run++){s=State.step(s,{type:'reset'},game);for(const id of game.targets)s=State.step(s,{type:'pick',id},game);assert.equal(s.complete,true);}
+console.log('State checks passed: start gate, unknown/repeated input, wrong-order reset, win, replay, collect, 20 replays.');
